@@ -1,1 +1,17 @@
 FOAIE DE GADURI COMUNE
+
+- pagina log in 
+
+- pagin sign up
+
+- profil utilizator
+	- poza profil
+	- evenimente favorite
+	- nume utilizator
+- pagina de home unde vezi evenimentele si iti recomanda 
+
+- pagina de pornire de unde sa selecteze judetul
+
+- pagina de favorite
+
+- selcetie evenimente in functie de data
