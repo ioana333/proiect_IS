@@ -11,6 +11,6 @@ INSERT INTO categories (name) VALUES
 ('Sport'),
 ('Festival');
 
--- Example admin user (use a real password hash in a real app)
+
 INSERT INTO users (name, email, password_hash, role)
 VALUES ('Admin', 'admin@example.com', 'hashed_password_here', 'admin');

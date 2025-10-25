@@ -1,8 +1,18 @@
+DROP DATABASE IF EXISTS event_app;
 CREATE DATABASE event_app;
   -- CHARACTER SET utf8mb4
   -- COLLATE utf8mb4_unicode_ci;
 
 USE event_app;
+
+
+-- =======================================
+-- CITIES TABLE
+-- =======================================
+CREATE TABLE cities (
+    city_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE
+);
 
 -- =======================================
 -- USERS TABLE
@@ -19,13 +29,7 @@ CREATE TABLE users (
     FOREIGN KEY (city_id) REFERENCES cities(city_id) ON DELETE SET NULL
 );
 
--- =======================================
--- CITIES TABLE
--- =======================================
-CREATE TABLE cities (
-    city_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL UNIQUE
-);
+
 
 -- =======================================
 -- CATEGORIES TABLE
@@ -103,4 +107,4 @@ CREATE INDEX idx_event_date ON events(date_time);
 CREATE INDEX idx_event_city ON events(city_id);
 CREATE INDEX idx_event_category ON events(category_id);
 CREATE INDEX idx_user_notifications_user ON user_notifications(user_id);
-CREATE INDEX idx_wishlist_user ON wishlist(user_id);
+-- CREATE INDEX idx_wishlist_user ON wishlist(user_id);
