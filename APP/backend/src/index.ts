@@ -41,7 +41,9 @@ app.post("/api/register", async (req, res) => {
   const username = data.username ?? data.email.split("@")[0];
   const hash = await bcrypt.hash(data.password, 10);
   const user = await prisma.user.create({ data: { email: data.email, password: hash, city: data.city, username } });
-  res.json({ id: user.id });
+  //res.json({ id: user.id });
+  const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, { expiresIn: "7d" });
+  res.json({ token });
 });
 
 app.post("/api/login", async (req, res) => {
