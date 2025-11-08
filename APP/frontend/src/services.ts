@@ -24,8 +24,9 @@ export async function register(body: { email: string; password: string; city?: s
   await api.post("/register", body);
 }
 
-export async function login(body: { email: string; password: string }) {
+export async function loginUser(body: { email: string; password: string }) {
   const { data } = await api.post("/login", body);
+  
   // păstrăm token-ul pentru rute protejate (wishlist)
   localStorage.setItem("token", data.token);
   return data as { token: string };
