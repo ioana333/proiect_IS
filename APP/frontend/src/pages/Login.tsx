@@ -20,9 +20,8 @@ export default function Login() {
     try {
       await login({ email, password });
       navigate(from, { replace: true });
-      window.location.href = "/";
     } catch (error: unknown) {
-      let message = "Logare eșuată";
+      let message = "Login eșuat";
       if (typeof error === "object" && error !== null) {
         const errObj = error as { response?: { data?: { error?: string } } };
         message = errObj.response?.data?.error ?? message;
